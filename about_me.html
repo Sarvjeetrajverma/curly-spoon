@@ -1,0 +1,90 @@
+<html>
+<head>
+    <title>About Me</title>
+    <script>
+        function showMessage()
+        {
+            alert("You clicked the td ");
+        }
+
+        var tds = document.getElementsByTagName("td");
+        
+
+
+        function runOnLoad(){
+        for(var i = 0; i< tds.length; i++){
+            
+            tds[i].addEventListener('click',function(){
+                showMessage();
+            })
+        }
+    }
+
+
+    function manipulate(){
+
+        var input = document.getElementById('name').value;
+
+        input = input.split("").reverse().join("");
+
+        alert("You entered : "+input);
+    }
+    window.onload = runOnLoad;
+    </script>
+    <style>
+        body{
+            background: skyblue;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        table tr td{
+            background-color: aqua;
+        }
+        table tr td:hover{
+            background-color: darkblue;
+            color:white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<center>
+    <h1>About Me</h1>
+    <p>
+        <h3>
+            <marquee behavior="" direction="">Hello there</marquee>
+            Name : <b>Sarvjeet Raj Verma</b>
+            <br>Batch : <b>2023-27</b>
+            
+        </h3>
+    </p>
+    <table border="2px" cellpadding="8px"> 
+        <caption>Oil Consumption</caption>
+        <tr>
+            <td>
+                1,1
+            </td>
+            <td>
+                1,2
+            </td>
+        </tr>
+        <tr>
+            <td>
+                2,1
+            </td>
+            <td>
+                2,2
+            </td>
+        </tr>
+    </table>
+
+    <p>
+    <input type="text" id="name" />
+    <button onclick="manipulate()">manipulate</button>
+</p>
+</center>
+
+
+</body>
+
+
+</html>
